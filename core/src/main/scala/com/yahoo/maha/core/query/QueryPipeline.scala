@@ -651,7 +651,7 @@ OuterGroupBy operation has to be applied only in the following cases
       } else false
     }
 
-    val hasOuterGroupBy = (nonKeyRequestedDimCols.isEmpty
+    val hasOuterGroupBy = (!nonKeyRequestedDimCols.exists(_=="Day")
       && !isRequestedHigherDimLevelKey
       && !isHighestDimPkIDRequested
       && bestDimCandidates.nonEmpty
